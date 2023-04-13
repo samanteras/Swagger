@@ -14,6 +14,7 @@
 		58AB29BE29E88996006AD352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AB29BD29E88996006AD352 /* Assets.xcassets */; };
 		58AB29C129E88996006AD352 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AB29BF29E88996006AD352 /* LaunchScreen.storyboard */; };
 		58AB29C929E88A10006AD352 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AB29C829E88A10006AD352 /* ListController.swift */; };
+		E3D3E7577E7E0A521634E776 /* Pods_Swagger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57E28633351FDA9AC29DF18 /* Pods_Swagger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		58AB29C029E88996006AD352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58AB29C229E88996006AD352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58AB29C829E88A10006AD352 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		864FE4525CCD4DA15AD5ED15 /* Pods-Swagger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swagger.debug.xcconfig"; path = "Target Support Files/Pods-Swagger/Pods-Swagger.debug.xcconfig"; sourceTree = "<group>"; };
+		C57E28633351FDA9AC29DF18 /* Pods_Swagger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swagger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E610B7CBA25E73AE20AF4D1C /* Pods-Swagger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swagger.release.xcconfig"; path = "Target Support Files/Pods-Swagger/Pods-Swagger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D3E7577E7E0A521634E776 /* Pods_Swagger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26888965FC5500136ACFC5DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				864FE4525CCD4DA15AD5ED15 /* Pods-Swagger.debug.xcconfig */,
+				E610B7CBA25E73AE20AF4D1C /* Pods-Swagger.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		58AB29A529E88993006AD352 = {
 			isa = PBXGroup;
 			children = (
 				58AB29B029E88994006AD352 /* Swagger */,
 				58AB29AF29E88994006AD352 /* Products */,
+				26888965FC5500136ACFC5DD /* Pods */,
+				E29674A5E7319D9514F16404 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +87,14 @@
 			path = Swagger;
 			sourceTree = "<group>";
 		};
+		E29674A5E7319D9514F16404 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C57E28633351FDA9AC29DF18 /* Pods_Swagger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58AB29C529E88996006AD352 /* Build configuration list for PBXNativeTarget "Swagger" */;
 			buildPhases = (
+				AD0AF0C297CB8B793F32D911 /* [CP] Check Pods Manifest.lock */,
 				58AB29AA29E88994006AD352 /* Sources */,
 				58AB29AB29E88994006AD352 /* Frameworks */,
 				58AB29AC29E88994006AD352 /* Resources */,
@@ -135,6 +161,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD0AF0C297CB8B793F32D911 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swagger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58AB29AA29E88994006AD352 /* Sources */ = {
@@ -286,6 +337,7 @@
 		};
 		58AB29C629E88996006AD352 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864FE4525CCD4DA15AD5ED15 /* Pods-Swagger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +365,7 @@
 		};
 		58AB29C729E88996006AD352 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E610B7CBA25E73AE20AF4D1C /* Pods-Swagger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
