@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		585FF41E29E88FC7005E915B /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FF41D29E88FC7005E915B /* ListTableViewController.swift */; };
-		585FF42029E88FE5005E915B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FF41F29E88FE5005E915B /* Model.swift */; };
+		585FF42029E88FE5005E915B /* APImanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FF41F29E88FE5005E915B /* APImanager.swift */; };
 		585FF42229E9D0F4005E915B /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FF42129E9D0F4005E915B /* ItemViewCell.swift */; };
+		5865F1B729EC762B00236B9A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865F1B629EC762B00236B9A /* Model.swift */; };
 		58AB29B229E88994006AD352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AB29B129E88994006AD352 /* AppDelegate.swift */; };
 		58AB29B429E88994006AD352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AB29B329E88994006AD352 /* SceneDelegate.swift */; };
 		58AB29B929E88994006AD352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AB29B729E88994006AD352 /* Main.storyboard */; };
@@ -21,8 +22,9 @@
 
 /* Begin PBXFileReference section */
 		585FF41D29E88FC7005E915B /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
-		585FF41F29E88FE5005E915B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		585FF41F29E88FE5005E915B /* APImanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APImanager.swift; sourceTree = "<group>"; };
 		585FF42129E9D0F4005E915B /* ItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
+		5865F1B629EC762B00236B9A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		58AB29AE29E88994006AD352 /* Swagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AB29B129E88994006AD352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58AB29B329E88994006AD352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,8 @@
 				58AB29B329E88994006AD352 /* SceneDelegate.swift */,
 				585FF41D29E88FC7005E915B /* ListTableViewController.swift */,
 				585FF42129E9D0F4005E915B /* ItemViewCell.swift */,
-				585FF41F29E88FE5005E915B /* Model.swift */,
+				5865F1B629EC762B00236B9A /* Model.swift */,
+				585FF41F29E88FE5005E915B /* APImanager.swift */,
 				58AB29B729E88994006AD352 /* Main.storyboard */,
 				58AB29BD29E88996006AD352 /* Assets.xcassets */,
 				58AB29BF29E88996006AD352 /* LaunchScreen.storyboard */,
@@ -215,7 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585FF42029E88FE5005E915B /* Model.swift in Sources */,
+				5865F1B729EC762B00236B9A /* Model.swift in Sources */,
+				585FF42029E88FE5005E915B /* APImanager.swift in Sources */,
 				58AB29BC29E88994006AD352 /* Swagger.xcdatamodeld in Sources */,
 				58AB29B229E88994006AD352 /* AppDelegate.swift in Sources */,
 				585FF42229E9D0F4005E915B /* ItemViewCell.swift in Sources */,
@@ -380,7 +384,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Volodya.Swagger;
+				PRODUCT_BUNDLE_IDENTIFIER = Nesterovich.swagger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -408,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Volodya.Swagger;
+				PRODUCT_BUNDLE_IDENTIFIER = Nesterovich.swagger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

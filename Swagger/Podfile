@@ -8,5 +8,6 @@ target 'Swagger' do
   # Pods for Swagger
  pod 'Kingfisher'
 pod 'Alamofire'
+pod 'SwiftLint'
 
 end
