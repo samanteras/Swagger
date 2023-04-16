@@ -14,13 +14,18 @@ class ItemViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configure(url: String?, imageView: UIImageView) {
+        if let imageUrl = url, let url = URL(string: imageUrl) {
+            self.imageItem.kf.setImage(with: url)
+        } else {
+            self.imageItem.image = UIImage(named: "content")
+        }
     }
     
     override func prepareForReuse() {

@@ -23,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="EUa-M1-P3o">
+                                            <rect key="frame" x="53" y="29" width="20" height="20"/>
+                                        </activityIndicatorView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ogy-Yu-TvK">
                                             <rect key="frame" x="20" y="7" width="87" height="63"/>
                                             <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,11 +40,15 @@
                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" systemColor="systemPinkColor"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EUa-M1-P3o" secondAttribute="bottom" constant="17" id="14R-io-ep9"/>
+                                        <constraint firstItem="EUa-M1-P3o" firstAttribute="leading" secondItem="ui4-Cb-ucI" secondAttribute="leadingMargin" constant="33" id="268-Im-6xZ"/>
                                         <constraint firstItem="cyA-0i-Mn6" firstAttribute="leading" secondItem="Ogy-Yu-TvK" secondAttribute="trailing" constant="15" id="3wd-Jt-yWz"/>
                                         <constraint firstItem="cyA-0i-Mn6" firstAttribute="top" secondItem="ui4-Cb-ucI" secondAttribute="topMargin" constant="17" id="7LO-ZM-Zs7"/>
                                         <constraint firstAttribute="bottom" secondItem="Ogy-Yu-TvK" secondAttribute="bottom" constant="7" id="Bn5-sW-uIa"/>
                                         <constraint firstItem="cyA-0i-Mn6" firstAttribute="trailing" secondItem="ui4-Cb-ucI" secondAttribute="trailingMargin" id="D8z-Pl-RBZ"/>
                                         <constraint firstItem="Ogy-Yu-TvK" firstAttribute="width" secondItem="ui4-Cb-ucI" secondAttribute="width" multiplier="0.223077" id="Qh9-uY-eV1"/>
+                                        <constraint firstItem="EUa-M1-P3o" firstAttribute="top" secondItem="ui4-Cb-ucI" secondAttribute="topMargin" constant="18" id="YYC-cL-oJY"/>
+                                        <constraint firstItem="EUa-M1-P3o" firstAttribute="width" secondItem="Ogy-Yu-TvK" secondAttribute="width" multiplier="0.229885" id="bLB-Ki-mH2"/>
                                         <constraint firstItem="Ogy-Yu-TvK" firstAttribute="top" secondItem="ui4-Cb-ucI" secondAttribute="top" constant="7" id="dcD-Ri-PQp"/>
                                         <constraint firstItem="Ogy-Yu-TvK" firstAttribute="height" secondItem="ui4-Cb-ucI" secondAttribute="height" multiplier="0.818182" id="iKd-ZU-1ss"/>
                                         <constraint firstItem="Ogy-Yu-TvK" firstAttribute="leading" secondItem="ui4-Cb-ucI" secondAttribute="leading" constant="20" symbolic="YES" id="mdZ-DQ-kAd"/>
@@ -61,6 +68,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="SpX-c2-6X8"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="0bR-ns-ccF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="pullToRefresh:" destination="drz-5H-VjD" eventType="valueChanged" id="sfL-8r-I8B"/>
