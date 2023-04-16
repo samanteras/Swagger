@@ -6,5 +6,7 @@ target 'Swagger' do
   use_frameworks!
 
   # Pods for Swagger
+ pod 'Kingfisher'
+pod 'Alamofire'
 
 end

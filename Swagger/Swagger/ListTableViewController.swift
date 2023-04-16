@@ -7,36 +7,69 @@
 
 import UIKit
 
-class ListTableViewController: UITableViewController {
+class ListTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var imagepicker: UIImagePickerController!
+    var resultData: MyResponse!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        loadContent {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("Count: \(items.count)")
+        return items.count
+    
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ItemViewCell
+        let item = items[indexPath.row]
+        getImage(url: item.image, imageView: cell.imageItem)
+        cell.nameItem.text = item.name
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        imagepicker = UIImagePickerController()
+        imagepicker.delegate = self
+        imagepicker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+               imagepicker.sourceType = .camera
+            self.tableView.reloadData()
+           } else if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+               imagepicker.sourceType = .photoLibrary
+               self.tableView.reloadData()
+           } else {
+               // обработка ошибки
+               return
+           }
+        self.tableView.reloadData()
+        present(imagepicker, animated: true)
+    }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            postImage(image: pickedImage)
+        }
+        dismiss(animated: true)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
