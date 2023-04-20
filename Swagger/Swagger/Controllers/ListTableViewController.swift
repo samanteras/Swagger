@@ -12,10 +12,11 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     private var imagepicker: UIImagePickerController!
     private var id: Int!
     private var resultData: MyResponse!
+    private var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadContent {
+        networkManager.loadContent {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -26,7 +27,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            postImage(image: pickedImage, id: id)
+            networkManager.postImage(image: pickedImage, id: id)
         }
         dismiss(animated: true)
     }
@@ -34,7 +35,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     // MARK: - IBActions
     
     @IBAction func pullToRefresh(_ sender: Any) {
-        loadContent {
+        networkManager.loadContent {
             DispatchQueue.main.async {
                 self.refreshControl?.endRefreshing()
                 self.tableView.reloadData()
@@ -49,12 +50,12 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return networkManager.items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ItemViewCell
-        let item = items[indexPath.row]
+        let item = networkManager.items[indexPath.row]
         cell.configure(url: item.image, imageView: cell.imageItem)
         cell.nameItem.text = item.name
         return cell
@@ -68,7 +69,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         imagepicker = UIImagePickerController()
         imagepicker.delegate = self
         imagepicker.allowsEditing = true
-        id = items[indexPath.row].id
+        id = networkManager.items[indexPath.row].id
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagepicker.sourceType = .camera
             self.tableView.reloadData()
